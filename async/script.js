@@ -86,15 +86,15 @@
 //     console.log(res);
 //  })
 
-const getdata = (data) => {
+// const getdata = (data) => {
 
-    return new Promise( (resolve,reject) => {
-        setTimeout(() => {
-            console.log("this is a promise data",data);
-            resolve("succes");
-        },2000)
-    })
-}
+//     return new Promise( (resolve,reject) => {
+//         setTimeout(() => {
+//             console.log("this is a promise data",data);
+//             resolve("succes");
+//         },2000)
+//     })
+// }
 
 
 // let p = getdata(1);
@@ -111,17 +111,34 @@ const getdata = (data) => {
 // })
 
 
-async function getalldata() {
+// async function getalldata() {
 
-    await getdata(1);
-    await getdata(2);
-    await getdata(3);
-    await getdata(4);
-    await getdata(5);
+//     await getdata(1);
+//     await getdata(2);
+//     await getdata(3);
+//     await getdata(4);
+//     await getdata(5);
+    
+// }
+
+// getalldata();
+
+
+
+//--prac callback hell
+
+function getData(id,getNextdata){
+    setTimeout(() => {
+        console.log("data:", id);
+        if(getNextdata) getNextdata();
+    }, 2000);
     
 }
 
-getalldata();
-
-
-
+getData(1,() => {
+    console.log("Loding Next Data....")
+    getData(2 , () => {
+         console.log("Loding Next Data....")
+        getData(3)
+    })
+});
