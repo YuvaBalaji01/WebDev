@@ -45,3 +45,9 @@ select{
     border-radius: 0.5rem;
     font-size: large;
 }
+
+img{
+    width: 2rem;
+    margin: 0;
+    padding: 0;
+}
