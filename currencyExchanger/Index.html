@@ -19,22 +19,34 @@
     <div class="container">
 
         <h1>Currency Converter </h1>
-        <input type="text" id="ip">
+        <input type="number" id="ip" placeholder="Enter Amount">
         <form action="">
-            
-            <label for="from">From:</label>
-            <img src="https://flagsapi.com/US/flat/64.png" id="fromimg" >
-            <select name="From" id="from"></select>
-            
-           
-            <i class="fas fa-exchange"></i>
-            <label for="to">To:</label>
-            <img src="https://flagsapi.com/IN/flat/64.png" id="toimg">
-            <select name="To" id="to"></select>
-            
-            
-            <h3 class="msg">1 USD = 90 INR</h3>
-            <button>Converte</button>
+
+            <div class="dropdown">
+
+                <div>
+                    <label>From</label>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/US/flat/64.png" id="fromimg">
+                        <select name="From" id="from"></select>
+                    </div>
+                </div>
+
+                <i class="fas fa-right-left exchange"></i>
+
+                <div>
+                    <label>To</label>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/IN/flat/64.png" id="toimg">
+                        <select name="To" id="to"></select>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="msg">1 USD = 83.50 INR</h3>
+
+            <button>Convert</button>
         </form>
 
     </div>
