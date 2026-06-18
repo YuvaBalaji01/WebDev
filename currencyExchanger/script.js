@@ -1,21 +1,15 @@
 
-let input = document.querySelector(".ip");
-let bnt = document.querySelector("button");
-
-bnt.addEventListener("click", ()=> {
-    const val = input.value;
-    console.log(val);    
-})
-
 // let message = document.querySelector(".msg");
 // console.log(message.innerText);
 
 // let newoption = document.createElement("option");
 // console.dir(newoption);
 
+//let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+
 let tag1 = document.querySelector("#from");
-    let tag2 = document.querySelector("#to");
-    let tags = [tag1,tag2];
+let tag2 = document.querySelector("#to");
+let tags = [tag1,tag2];
 
 for(let tag of tags){
     for(code in countryList){
@@ -29,4 +23,38 @@ for(let tag of tags){
             newoption.selected = "selected";
     }
 }
+
+
+
+let submit = document.querySelector("button");
+
+const updateFlag = (evt) => {
+
+    let currCode = evt.value;
+    let countryCode = countryList[currCode];
+    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+    let img;
+    if(evt.name === "From"){
+        img = document.querySelector("#fromimg");
+    }
+    else img = document.querySelector("#toimg");
+    img.setAttribute("src",newSrc);
+    
+}
+
+tag1.addEventListener("change", (evt) => {
+    updateFlag(evt.target);
+  });
+tag2.addEventListener("change", (evt) => {
+    updateFlag(evt.target);
+  });
+
+
+submit.addEventListener("click",()=>{
+    // let opn = document.querySelector("option");
+    // console.log(opn.innerText);
+    // let input = document.querySelector("#ip");
+    // console.log(input.value);
+    
+})
 
